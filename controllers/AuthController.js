@@ -151,7 +151,10 @@ class AuthController {
         throw new ApiError(404, 'User not found.');
       }
 
-      res.status(200).json({ email: user.email });
+      res.status(200).json({ 
+        email: user.email, 
+        userId: user.userId 
+      });
 
     } catch (error) {
       next(error);
